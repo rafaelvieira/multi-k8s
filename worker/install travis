@@ -4,3 +4,9 @@ gem install travis -v 1.8.10
 travis login --com
 # copy json file into de 'volume' directory so we can use it in the container
 travis encrypt-file service-account.json -r rafaelvieira/multi-k8s --org
+
+
+To run tests, make sure to run
+
+    script:
+      - docker run -e CI=true USERNAME/docker-react npm run test
